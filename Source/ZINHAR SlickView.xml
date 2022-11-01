@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+// Created by ZINHAR
+// Based on SLICK View v1 by mvana
+	
+	<settings enableScaling="true"/>
+	
+	<!-- Background Cover -->
+	<element type="BackgroundAlbumCover" brightness="0.35" alpha="1" refreshInterval="EndOfTrack"/>
+	
+	<!-- Album Cover -->
+	<element type="AlbumCover" 
+	xAnchor="Panel.Left"	x="100"		width="0" 
+	yAnchor="Panel.Bottom"	y="-120"	height="0"
+	widthDock="Panel.Height.55" 
+	heightDock="Panel.Height.55" align="Bottom.Left" 
+	min="50" max="800"/>
+	
+	<!-- Title -->
+	<element type="Field" id="Title" 
+	xAnchor="AlbumCover.Right"			x="14" 
+	yAnchor="AlbumCover.Bottom"			y="-80" 
+	widthDock="X:Panel.Right"			width="-50" 
+	heightDock="Y:Panel.Bottom"		height="-10" 
+	align="Bottom" multiLine="true" 
+	font="Segoe UI" style="Bold" size="24" fg="225,225,225" />
+	
+	<!-- Artist Name -->
+	<element type="Field" id="Artist" 
+	xAnchor="AlbumCover.Right"	x="14" 
+	yAnchor="Title.Top"		y="-50" 
+	widthDock="X:Panel.Right"	width="-50" 
+	align="Top" multiLine="false" 
+	font="Segoe UI" style="Regular" size="22" fg="150,150,150" >
+	</element>
+	
+	
+	
+	//Open-Close Playlist 
+	<element type="icon" 
+	xAnchor="AlbumCover.Left" x="0"  width="0" 
+	yAnchor="AlbumCover.Top"  y="0" height="0" 
+	widthDock="AlbumCover.Width" 
+	heightDock="AlbumCover.Height"
+	onClick="OpenAutoHidePanel:#PanelNowPlayingList">
+	</element>
+	
+	<!-- Auto Hide -->
+	<autoHide name="#PanelNowPlayingList" 
+	xAnchor="Panel.Right"		yAnchor="Panel.Top" 
+	widthDock="X:Panel.Right"	heightDock="Y:Artist.Top" 
+	x="-500"					y="40" 
+	width="0"					height="0" 
+	allowPinning="true" resizePictures="true" disableHotPoint="true">
+	
+		<!-- Playlist -->	
+		<element name="#NowPlaying"	type="NowPlayingList" 
+		xAnchor="Panel.Right"		yAnchor="Panel.Top" 
+		widthDock="X:Panel.Right"	heightDock="Y:Artist.Top" 
+		x="-500"					y="40" 
+		width="0"					height="-30" rowPadding="30" 
+		font="Segoe UI" style="Regular" size="12" 
+		fg="125,125,125" fg2="255,255,255" 
+		mouseOverFg="255,255,255" multiLine="false">
+		
+		<child id="Speaker"		width="0"	align="Left" />
+		<child					width="20"/>
+		<child id="Title"		width="160"	align="Left"/>
+		<child					width="30"/>
+		<child id="Artist"		width="150"	align="Center"/>
+		<child					width="10"/>
+		<child id="Duration"	width="70"	align="Right"/>
+			
+		</element>
+	
+	</autoHide>
+
+
+	<!-- Spectrum Visualiser -->
+    <element type="SpectrumVisualiser" xAnchor="AlbumCover.Left" x="0" yAnchor="AlbumCover.Top" y="-60" widthDock="Panel.Height.55" width="0" height="60" fg="255,255,255,255" bdr="0,255,255,255"></element>
+
+</root>
